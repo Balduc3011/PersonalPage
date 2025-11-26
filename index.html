@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gameitthoi</title>
+    <title>Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/script.js" type="text/javascript" async></script>
+    <link rel="stylesheet" type="text/css" href="css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/games.css">
+    <!--
+        <script src="js/script.js" type="text/javascript" async></script>
+    -->
 </head>
+
 <body>
-    <div id = "menubar">
-        <ul class = "menu">
-            <li><a href="index.html" class="active">Gameitthoi</a></li>
-            <li><a href="#Review_Header">Reviews</a></li>
-            <li><a href="view/library.html">My Library</a></li>	
-        </ul>
-    </div>
-
-    <div id = "banner">
-        <div >
-            <video loop class = "intro">
-                <source src="video/GOTY2018.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class = "Gameitthoi">
-            <h>Gameitthoi</h>
-            <p>I am a Gamer <br>
-                not because i don't have a life <br>
-                but because i choose to have many <br>
-            </p>
-            <button class="myBtn" onclick="playintro()">Intro</button>
-        </div>
-    </div>
-
-    <div id = "breakline">
-        <div class = twoline>
-            <div class = left></div>
-            <div class = right></div>
-        </div>
-    </div>
-    <div id = "Reviews">
-        <div id = "Review_Header">
-            <h>
-                Game Reviews
-            </h>
-        </div>
-        <div id = "leftpart">
-            <div class = "Gbox">
-                <div class = "slide">
-                    <div class = "page">
-                        <div class = "game">
-                            <h1>God of War 2018</h1>
+    <div id="__nuxt">
+        <div id="frame" class="root root-en" style="font-family: Helvetica;">
+            <div class="content-wrap">
+                <div class="character__wrap">
+                    <div id="header" class="header" style="transform: translateX(0px);">
+                        <div class="header__logo">
+                            <img src="image/Header/logo.png" alt="logo">
                         </div>
-                        <div class = "game">
-                            <h1>Red Dead Redemption 2</h1>
+                        <div class="header__navwrap">
+                            <div class="header__navbar"><a href="/en/home" class="header__navitem">HOME</a> <a
+                                    href="/en/news" class="header__navitem">NEWS</a> <a href="/en/character/mondstadt"
+                                    class="header__navitem header__navitem--focus">CHARACTERS</a>
+                                <!--    
+                        <div class="header__navitem header__navitem__more">
+                            <p>EXPLORE</p>
+                            <ul class="header__navitem__sublist">
+                                <li><a href="/en/game" class="header__navlink">ABOUT GAME</a></li>
+                                <li><a href="/en/map" class="header__navlink">TEYVAT</a></li>
+                                <li><a href="/en/town" class="header__navlink">ITINERARY</a></li>
+                                <li><a href="/en/manga" class="header__navlink">MANGA</a></li>
+                            </ul>
                         </div>
-                        <div class = "game">
-                            <h1>The Legend of Zelda: Breath of the Wild</h1>
+                        <div class="header__navitem header__navitem__more">
+                            <p>More</p>
+                            <ul class="header__navitem__sublist">
+                                <li><a target="_blank" class="header__navlink">HoYoLAB</a></li>
+                                <li><a target="_blank" class="header__navlink">TOP-UP</a></li>
+                                <li><a href="/en/gift" class="header__navlink">REDEEM CODE</a></li>
+                            </ul>
                         </div>
-                        <div class = "game">
-                            <h1>Sekiro: Shadows Die Twice</h1>
+                        -->
+                            </div>
+                            <div class="header__navwrap_indexer">
+                            </div>
                         </div>
                     </div>
+                    <div class="character">
+                        <div class="character__bg character__bg1" style="background-image: url('image/BG/JDMBG.png');">
+                        </div>
+                        <div class="character__main">
+                            <div class="swiper-container character__swiper--con swiper-container-fade swiper-container-initialized swiper-container-horizontal"
+                                style="opacity: 1;">
+                                <ul class="swiper-wrapper" style="transition-duration: 0ms;">
+                                    <li class="swiper-slide"
+                                        style="width: 1400px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                        <img src="image/TempImg/2022020815142412039.png" draggable="false"
+                                            class="character__person"> <img src="image/TempImg/2022020810275080982.png"
+                                            draggable="false" class="character__icon">
+                                        <div data-swiper-parallax-opacity=".1" data-swiper-parallax-duration=".5"
+                                            class="character__content"
+                                            style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                            <img src="image/TempImg/53780031287efe8f5a8f50ca6fbcaba8_3327635623700661640.png"
+                                                draggable="false" class="character__name">
+                                            <div class="character__intro mCustomScrollbar _mCS_46 mCS_no_scrollbar">
+                                                <div id="mCSB_46"
+                                                    class="mCustomScrollBox mCS-light-thick mCSB_vertical mCSB_inside"
+                                                    tabindex="0" style="max-height: none;">
+                                                    <div id="mCSB_46_container"
+                                                        class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                                        style="position:relative; top:0; left:0;" dir="ltr">
+                                                        <div class="character__intro-content">
+                                                            <p>Daughter of the Yashiro Commission's Kamisato Clan from
+                                                                Inazuma. Dignified and elegant, wise
+                                                                and determined.<br>
+                                                                Sincere and pleasant to others. Universally loved by the
+                                                                Inazuma people, she has earned the
+                                                                title of Shirasagi Himegimi.<br>
+                                                                Sincere and pleasant to others. Universally loved by the
+                                                                Inazuma people, she has earned the
+                                                                title of Shirasagi Himegimi.<br>
+                                                                Sincere and pleasant to others. Universally loved by the
+                                                                Inazuma people, she has earned the
+                                                                title of Shirasagi Himegimi.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div id="mCSB_46_scrollbar_vertical"
+                                                        class="mCSB_scrollTools mCSB_46_scrollbar mCS-light-thick mCSB_scrollTools_vertical"
+                                                        style="display: none;">
+                                                        <div class="mCSB_draggerContainer">
+                                                            <div id="mCSB_46_dragger_vertical" class="mCSB_dragger"
+                                                                style="position: absolute; min-height: 30px; height: 0px; top: 0px;">
+                                                                <div class="mCSB_dragger_bar"
+                                                                    style="line-height: 30px;"></div>
+                                                            </div>
+                                                            <div class="mCSB_draggerRail"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <img src="image/TempImg/2021102111180559201.png" draggable="false"
+                                            class="character__sen">
+                                    </li>
+                                </ul>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                            <div class="character__page">
+                                <div
+                                    class="swiper-container character__swiper--page swiper-container-initialized swiper-container-horizontal swiper-container-thumbs">
+                                    <ul id="character-page-swiper-wrapper"
+                                        class="swiper-wrapper character__page--render swiper-pagination-custom"
+                                        style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                        <li class="swiper-slide swiper-slide-thumb-active swiper-slide-visible"
+                                            style="width: 110px; margin-right: 34px;">
+                                            <img src="https://play-lh.googleusercontent.com/jVtXhg40tuOoS201P0K67Uoy2wrzbkKPCj4qnLq-6qLFzkb0t0aV5fhBwiiNHiQwvY4=w480-h960-rw"
+                                                draggable="false">
+                                            <p>Foodie Sizzle</p>
+                                        </li>
+                                        <script>
+                                            // Đọc file JSON
+                                            fetch("../data/gamesInfo.json")
+                                                .then(res => res.json())
+                                                .then(list => {
 
-                    <div class = "page">
-                        <div class = "game">
-                            <h1>Total War: Three Kingdoms</h1>
+                                                    const container = document.getElementById("character-page-swiper-wrapper");
+
+                                                    list.forEach(item => {
+
+                                                        // Tạo <li>
+                                                        const li = document.createElement("li");
+                                                        li.className = "swiper-slide swiper-slide-visible swiper-slide-active";
+                                                        li.style.width = "110px";
+                                                        li.style.marginRight = "34px";
+
+                                                        // Tạo <img>
+                                                        const img = document.createElement("img");
+                                                        img.src = item.iconUrl;
+                                                        img.draggable = false;
+                                                        img.style.width = "104px";
+                                                        img.style.borderTopLeftRadius = "2%";
+                                                        img.style.borderTopRightRadius = "2%";
+
+                                                        // Tạo <p>
+                                                        const p = document.createElement("p");
+                                                        p.textContent = item.projectName;
+                                                        p.style.margin = "0";
+
+                                                        // Gắn vào li
+                                                        li.appendChild(img);
+                                                        li.appendChild(p);
+
+                                                        // Gắn vào UL
+                                                        container.appendChild(li);
+                                                    });
+                                                })
+                                                .catch(err => console.error("Lỗi đọc JSON:", err));
+                                        </script>
+                                    </ul><span class="swiper-notification" aria-live="assertive"
+                                        aria-atomic="true"></span>
+                                </div>
+                                <div class="swiper-btn-prev"></div>
+                                <div class="swiper-btn-next"></div>
+                            </div>
                         </div>
-                        <div class = "game">
-                            <h1>The Elder Scrolls V: Skyrim</h1>
-                        </div>
-                        <div class = "game">
-                            <h1>Assassin's Creed IV: Black Flag</h1>
-                        </div>
-                        <div class = "game">
-                            <h1>The Witcher 3: Wild Hunt</h1>
-                        </div>
+                    </div>
+                    <div style="width: 100%; height: 200px; background-color: #111111;">
+
                     </div>
                 </div>
             </div>
-            <div class = "slidebtn"></div>
-            <button class="sldBtn" onclick="Back()">Previous</button>
-            <button class="sldBtn" onclick="Next()">Next</button>
-        </div>
-
-        <div id = "centerpart">
-            <div class = "GameTitle">
-                <h>God of War 2018</h>
-            </div>
-            <div class = "Gameinfo">
-                <p>
-                    God of War (also known as God of War IV) is the sequel to God of War III 
-                    as well as a continuation of the canon God of War chronology. God of War 
-                    is the eighth installment in the franchise overall. <br>
-                    Unlike previous installments, this game focuses on Norse mythology and 
-                    follows an older and more seasoned Kratos and his new son Atreus in the 
-                    years since God of War III. The game released on April 20, 2018, and is 
-                    exclusive to the PlayStation 4. <br>
-                </p>
-                <h>Story</h>
-                <p>
-                    Many years have passed since Kratos took his vengeance against the Olympian 
-                    gods. Having survived his final encounter with his father Zeus, Kratos has 
-                    since travelled to Midgard in Ancient Norway and now lives with his young son 
-                    Atreus in the world of the Norse gods, a savage land inhabited by many ferocious 
-                    monsters and warriors. In order to teach his son, whose mother (and Kratos's second wife) 
-                    has recently died, how to survive in such a world, Kratos must master the rage 
-                    that has driven him for many years and embrace his newfound role as a father 
-                    and a mentor.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id = "breakline2">
-        <div class = twoline2>
-                <div class = left2></div>  
-                <div class = right2></div> 
-        </div>
-    </div>
-    <div id = "LibraryTitle">
-        <h>MyLibrary</h>
-    </div>
-    <div id = "MyLibrary">
-        <div class = "LibraryBox">
-            <div class = "LibrarySlide">
-                <div class = "LibraryPage">
-                    <a href="https://www.youtube.com/embed/OwVe4ZNeQZk" target="iframe_a">
-                        <img src="image/Icon/1.jpg" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/wsf78BS9VE0" target="iframe_a">
-                        <img src="image/Icon/2.png" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/JSRtYpNRoN0" target="iframe_a">
-                        <img src="image/Icon/3.png" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/_zDZYrIUgKE" target="iframe_a">
-                        <img src="image/Icon/4.jpg" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/X5aJfebzkrM" target="iframe_a">
-                        <img src="image/Icon/5.png" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/Kdaoe4hbMso" target="iframe_a">
-                        <img src="image/Icon/6.jpg" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/Kwk1jWERuQg" target="iframe_a">
-                        <img src="image/Icon/7.jpg" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                    <a href="https://www.youtube.com/embed/s4D42vMUSIM" target="iframe_a">
-                        <img src="image/Icon/8.jpg" alt="image" title= "home" 
-                        class = Gameimg />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div>
-            <iframe class = "TrailerFrame"
-             src="https://www.youtube.com/embed/wsf78BS9VE0" 
-            name="iframe_a"></iframe>
-            <!-- Thêm ?rel=0&autoplay=1 vào sau link để autoplay -->
         </div>
     </div>
 
 </body>
-</html>
