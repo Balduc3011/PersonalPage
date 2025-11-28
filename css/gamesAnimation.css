@@ -1,0 +1,46 @@
+@keyframes fade_in_keyframe {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade_in_anim {
+    animation-name:fade_in_keyframe;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blue_glow_keyframe {
+    from {
+        filter: drop-shadow(0 0 0 #69e1ff00);
+    }
+
+    to {
+        filter: drop-shadow(0 0 0.75rem #69e1ff);
+    }
+}
+
+.blue_glow_anim:hover {
+    animation-name: blue_glow_keyframe;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes character_move_in_keyframe {
+    0% {
+        transform: translateX(2000px);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.character_move_in_anim {
+    animation-name: character_move_in_keyframe;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}

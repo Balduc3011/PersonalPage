@@ -9,9 +9,20 @@ a {
     z-index: 999;
     width: 100%;
     min-width: 1280px;
-    height: 66px;
-    background-color: rgba(17, 17, 17, 0.75);
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.35)
+    height: 60px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.35);
+    
+}
+
+.header__background {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 105%;
+    height: 105%;
+    opacity: 0.75;
+    background-image: url("../image/Header/Header.png");
+    z-index: 99;
 }
 
 .header--scroll {
@@ -19,12 +30,13 @@ a {
 }
 
 .header__logo {
+    position: absolute;
     float: left;
     margin-top: 5px;
     margin-left: 50px;
-    width: 317px;
     height: 105px;
     height: 90%;
+    z-index: 100;
 }
 
 .header__logo img {
@@ -33,9 +45,10 @@ a {
 }
 
 .header__navwrap {
+    position: absolute;
+    margin-left: 260px;
     display: inline-block;
-    position: relative;
-    margin-left: -34px
+    z-index: 100;
 }
 
 .header__navbar {

@@ -13,9 +13,8 @@
     <link rel="stylesheet" type="text/css" href="css/swiper.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/games.css">
-    <!--
-        <script src="js/script.js" type="text/javascript" async></script>
-    -->
+    <link rel="stylesheet" type="text/css" href="css/gamesAnimation.css">
+    <script src="js/script.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -24,8 +23,9 @@
             <div class="content-wrap">
                 <div class="character__wrap">
                     <div id="header" class="header" style="transform: translateX(0px);">
+                        <div class="header__background"></div>
                         <div class="header__logo">
-                            <img src="image/Header/logo.png" alt="logo">
+                            <img src="image/Header/logo.png" style="z-index: 100;" alt="logo">
                         </div>
                         <div class="header__navwrap">
                             <div class="header__navbar"><a href="/en/home" class="header__navitem">HOME</a> <a
@@ -59,18 +59,32 @@
                         <div class="character__bg character__bg1" style="background-image: url('image/BG/JDMBG.png');">
                         </div>
                         <div class="character__main">
-                            <div class="swiper-container character__swiper--con swiper-container-fade swiper-container-initialized swiper-container-horizontal"
-                                style="opacity: 1;">
+                            <div
+                                class="swiper-container character__swiper--con swiper-container-fade swiper-container-initialized swiper-container-horizontal">
                                 <ul class="swiper-wrapper" style="transition-duration: 0ms;">
                                     <li class="swiper-slide"
                                         style="width: 1400px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
                                         <img src="image/TempImg/2022020815142412039.png" draggable="false"
-                                            class="character__person"> <img src="image/TempImg/2022020810275080982.png"
-                                            draggable="false" class="character__icon">
-                                        <div data-swiper-parallax-opacity=".1" data-swiper-parallax-duration=".5"
-                                            class="character__content"
+                                            id="character__person" class="character__person"> <img
+                                            src="image/TempImg/2022020810275080982.png" draggable="false"
+                                            class="character__icon">
+                                        <div id="character__content" class="character__content"
                                             style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                            <h1 class="character__title">My Card Shop Simulator 3D</h1>    
+                                            <h1 id="id_ProjectName" class="character__title">Project Name</h1>
+                                            <div class="crop"></div>
+                                            <div class="store_btn_wrap">
+                                                <button id="ios_link_btn" class="store_btn blue_glow_anim"
+                                                    style="background-image: url('../image/Device/IOSDeviceIcon.png');"
+                                                    onclick="OpenStoreLink(DeviceType.IOS)">
+                                                </button>
+                                                <button id="android_link_btn" class="store_btn blue_glow_anim"
+                                                    style="background-image: url('../image/Device/AndroidDeviceIcon.png');"
+                                                    onclick="OpenStoreLink(DeviceType.Android)">
+                                                </button>
+                                                <button id="window_link_btn" class="store_btn blue_glow_anim"
+                                                    style="background-image: url('../image/Device/WindowDeviceIcon.png');">
+                                                </button>
+                                            </div>
                                             <div class="character__intro mCustomScrollbar _mCS_46 mCS_no_scrollbar">
                                                 <div id="mCSB_46"
                                                     class="mCustomScrollBox mCS-light-thick mCSB_vertical mCSB_inside"
@@ -79,7 +93,9 @@
                                                         class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
                                                         style="position:relative; top:0; left:0;" dir="ltr">
                                                         <div class="character__intro-content">
-                                                            <p>My Card Shop Simulator 3D lets you build the ultimate trading card empire. Buy booster packs, discover rare cards, and attract collectors to your growing shop. Manage inventory, set prices, and watch market trends to maximize profits. Customize your store, complete daily tasks, and rise from a tiny corner stand to a legendary card destination. Whether you love opening packs or running a business, this immersive simulator brings the thrill of card collecting to life.</p>
+                                                            <p id="id_ProjectDescription">
+                                                                Project description
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <div id="mCSB_46_scrollbar_vertical"
@@ -108,61 +124,72 @@
                                     <ul id="character-page-swiper-wrapper"
                                         class="swiper-wrapper character__page--render swiper-pagination-custom"
                                         style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                        <li class="swiper-slide swiper-slide-thumb-active swiper-slide-visible"
-                                            style="width: 110px; margin-right: 34px;">
-                                            <img src="https://play-lh.googleusercontent.com/jVtXhg40tuOoS201P0K67Uoy2wrzbkKPCj4qnLq-6qLFzkb0t0aV5fhBwiiNHiQwvY4=w480-h960-rw"
-                                                draggable="false">
-                                            <p>Foodie Sizzle</p>
-                                        </li>
                                         <script>
-                                            // Đọc file JSON
-                                            fetch("data/gamesInfo.json")
-                                                .then(res => res.json())
-                                                .then(list => {
+                                            FetchData().then(() => {
+                                                RenderGameList();
+                                            });
 
-                                                    const container = document.getElementById("character-page-swiper-wrapper");
+                                            function RenderGameList() {
+                                                const container = document.getElementById("character-page-swiper-wrapper");
 
-                                                    list.forEach(item => {
+                                                projectList.forEach(item => {
 
-                                                        // Tạo <li>
-                                                        const li = document.createElement("li");
+                                                    // Tạo <li>
+                                                    const li = document.createElement("li");
+                                                    li.id = "character_page_mini_icon_" + item.id;
+                                                    if (item.id == 1) {
+                                                        li.className = "swiper-slide swiper-slide-visible swiper-slide-thumb-active";
+                                                    }
+                                                    else {
                                                         li.className = "swiper-slide swiper-slide-visible swiper-slide-active";
-                                                        li.style.width = "110px";
-                                                        li.style.marginRight = "34px";
+                                                    }
+                                                    li.style.width = "110px";
+                                                    li.style.marginRight = "34px";
 
-                                                        // Tạo <img>
-                                                        const img = document.createElement("img");
-                                                        img.src = item.iconUrl;
-                                                        img.draggable = false;
-                                                        img.style.width = "104px";
-                                                        img.style.borderTopLeftRadius = "2%";
-                                                        img.style.borderTopRightRadius = "2%";
+                                                    // Tạo <img>
+                                                    const img = document.createElement("img");
+                                                    img.src = item.iconUrl;
+                                                    img.draggable = false;
+                                                    img.style.width = "105px";
+                                                    img.style.borderTopLeftRadius = "2%";
+                                                    img.style.borderTopRightRadius = "2%";
 
-                                                        // Tạo <p>
-                                                        const p = document.createElement("p");
-                                                        p.textContent = item.projectName;
-                                                        p.style.margin = "0";
+                                                    // Tạo <p>
+                                                    const p = document.createElement("p");
+                                                    p.textContent = item.projectName;
+                                                    p.style.margin = "0";
 
-                                                        // Gắn vào li
-                                                        li.appendChild(img);
-                                                        li.appendChild(p);
+                                                    // Tạo Btn
+                                                    const btn = document.createElement("button");
+                                                    btn.style.width = "100%";
+                                                    btn.style.height = "100%";
+                                                    btn.style.position = "absolute";
+                                                    btn.style.top = "0%";
+                                                    btn.style.left = "0%";
+                                                    btn.style.opacity = 0;
+                                                    btn.onclick = () => ShowProjectInfo(item.id);
 
-                                                        // Gắn vào UL
-                                                        container.appendChild(li);
-                                                    });
-                                                })
-                                                .catch(err => console.error("Lỗi đọc JSON:", err));
+                                                    // Gắn vào li
+                                                    li.appendChild(img);
+                                                    li.appendChild(p);
+                                                    li.appendChild(btn);
+
+                                                    // Gắn vào UL
+                                                    container.appendChild(li);
+                                                });
+                                            }
                                         </script>
                                     </ul><span class="swiper-notification" aria-live="assertive"
                                         aria-atomic="true"></span>
                                 </div>
-                                <div class="swiper-btn-prev"></div>
-                                <div class="swiper-btn-next"></div>
+                                <div class="swiper-btn-prev blue_glow_anim">
+                                </div>
+                                <div class="swiper-btn-next blue_glow_anim">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div style="width: 100%; height: 200px; background-color: #111111;">
-
+                    <div style=" width: 100%; height: 200px; background-color: #363636;">
                     </div>
                 </div>
             </div>
