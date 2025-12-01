@@ -8,9 +8,25 @@ function FetchData() {
       .then(res => res.json())
       .then(list => { 
         projectList = list;
+        //ValidateData();
         ShowProjectInfo(1);
       })
       .catch(err => console.error("Error reading JSON:", err));       
+}
+
+function ValidateData() {
+  projectList.forEach(item => {
+      var packageName = item.packageName;
+      var storeUrl = "/api/app-info?appId=" + packageName;
+      fetch(storeUrl)
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('#icon').src = data.icon;
+        item.projectName = data.title;
+        item.ratting = data.ratting;
+       });
+    }
+  ); 
 }
 
 function ShowProjectInfo(id) { 

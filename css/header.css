@@ -18,11 +18,12 @@ a {
     position: absolute;
     top: -5%;
     left: -5%;
-    width: 105%;
+    width: 105.5%;
     height: 105%;
     opacity: 0.75;
     background-image: url("../image/Header/Header.png");
     z-index: 99;
+    background-size: cover;
 }
 
 .header--scroll {
